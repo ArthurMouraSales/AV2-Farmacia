@@ -11,3 +11,7 @@ while(True):
         login_funcionario()
     elif opcao == 3:
         print("opção 3 main")
+        break
+    else:
+        print("Algum erro ocorreu na digitação da opção")
+        print("Tente novamente")

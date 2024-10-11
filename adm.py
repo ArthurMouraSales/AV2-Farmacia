@@ -11,6 +11,7 @@ def login_adm():
             add_remedio()
         elif opc_adm == 4:
             print("opção 4 adm")
+            return
         else:
             print("Algum erro ocorreu na digitação da opção")
             print("Tente novamente")
