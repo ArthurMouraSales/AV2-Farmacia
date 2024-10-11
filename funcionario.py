@@ -6,11 +6,10 @@ def login_funcionario():
         opc_funcionario = int(input("Digite sua escolha: "))
         if opc_funcionario == 1:
             os.system('cls')
-            print("venda")
             venda()
         elif opc_funcionario == 2:
             os.system('cls')
-            print("deveria sair")
+            return
         else:
             os.system('cls')
             print("Algum erro ocorreu na digitação da opção")
