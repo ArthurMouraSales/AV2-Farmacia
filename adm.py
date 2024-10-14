@@ -1,4 +1,6 @@
 import os
+import psycopg2
+from db import insercao_add_funcionario
 def login_adm():
     while(True):
         print("Escolha qual ação deseja realizar")
@@ -19,9 +21,19 @@ def login_adm():
 
 def add_funcionario():
     print("Digite as informações pedidas a seguir")
+    rg_funcionario = input("Digite o RG: ")
+    cpf_funcionario = input("Digite o CPF: ")
+    nome_funcionario = input("Digite o nome: ")
+    idade_funcionario = int(input("Digite a idade: "))
+    salario = float(input("Digite o salario: "))
+    turno = input("Digite o turno: ")
+    telefone_funcionario = input("Digite o telefone para contato: ")
+    insercao_add_funcionario(rg_funcionario, cpf_funcionario, nome_funcionario, idade_funcionario, salario, turno, telefone_funcionario)
+
+
+    
 
 def add_cliente():
-    clientes = []
     print("Digite as informações pedidas a seguir")
     rg_cliente = input("Digite o RG: ")
     cpf_cliente = input("Digite o CPF: ")
@@ -30,8 +42,10 @@ def add_cliente():
     telefone_cliente = input("Digite o telefone para contato: ")
 
 def add_remedio():
-    remedios = []
     print("Digite as informações pedidas a seguir")
     nome_remedio = input("Digite o nome: ")
-    marca_remedio = input("Digte a marca: ")
-    tarja_remedio = input("Digite a cor da tarja: ")
+    marca = input("Digte a marca: ")
+    tarja = input("Digite a cor da tarja: ")
+    categoria = input("Digite a categoria: ")
+    codigo = input("Digite o codigo: ")
+    preco = float(input("Digite o preço: "))
