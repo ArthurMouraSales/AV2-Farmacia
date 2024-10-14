@@ -1,8 +1,8 @@
 import os
 import psycopg2
-from db import insercao_add_funcionario
-from db import insercao_add_cliente
-from db import insercao_add_remedio
+from banco import insercao_add_funcionario
+from banco import insercao_add_cliente
+from banco import insercao_add_remedio
 
 def login_adm():
     while(True):
