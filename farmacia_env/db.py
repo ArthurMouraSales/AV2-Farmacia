@@ -21,7 +21,7 @@ def insercao_add_cliente(rg_cliente, cpf_cliente, nome_cliente, endereco_cliente
 
         cursor = conn.cursor()
 
-        query = "INSERT INTO funcionarios (rg_cliente, cpf_cliente, nome_cliente, endereco_cliente, telefone_cliente) VALUES (%s, %s, %s, %s, %s);"
+        query = "INSERT INTO clientes (rg_cliente, cpf_cliente, nome_cliente, endereco_cliente, telefone_cliente) VALUES (%s, %s, %s, %s, %s);"
 
         cursor.execute(query, (rg_cliente, cpf_cliente, nome_cliente, endereco_cliente, telefone_cliente))
 
@@ -43,7 +43,7 @@ def insercao_add_funcionario(rg_funcionario, cpf_funcionario, nome_funcionario, 
 
         cursor = conn.cursor()
 
-        query = "INSERT INTO clientes (rg_funcionario, cpf_funcionario, nome_funcionario, idade_funcionario, salario, turno, telefone_funcionario) VALUES (%s, %s, %s, %s, %s, %s, %s);"
+        query = "INSERT INTO funcionarios (rg_funcionario, cpf_funcionario, nome_funcionario, idade_funcionario, salario, turno, telefone_funcionario) VALUES (%s, %s, %s, %s, %s, %s, %s);"
 
         cursor.execute(query, (rg_funcionario, cpf_funcionario, nome_funcionario, idade_funcionario, salario, turno, telefone_funcionario))
 
