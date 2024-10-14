@@ -1,19 +1,19 @@
 cadastros = [
         {
-            'email': 'arthur.sales@gmail.com'
-            'senha': 'admin01'
+            "email": "arthur.sales@gmail.com",
+            "senha": "admin01"
         },
         {
-            'email': 'leonardo.salamoni@gmail.com'
-            'senha': 'admin02'   
+            "email": "leonardo.salamoni@gmail.com",
+            "senha": "admin02"   
         },
         {
-            'email': 'funcionario.01@gmail.com'
-            'senha': 'func01'   
+            "email": "funcionario.01@gmail.com",
+            "senha": "func01"   
         },
         {
-            'email': 'funcionario.02@gmail.com'
-            'senha': 'func02'   
+            "email": "funcionario.02@gmail.com",
+            "senha": "func02"   
         },
     ]
 
@@ -27,5 +27,7 @@ def login():
             return
         else:
             print("Acesso negado!")
+            return 
 
+login()
     
