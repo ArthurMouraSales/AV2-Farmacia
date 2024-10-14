@@ -3,6 +3,7 @@ import psycopg2
 from db import insercao_add_funcionario
 from db import insercao_add_cliente
 from db import insercao_add_remedio
+
 def login_adm():
     while(True):
         print("Escolha qual ação deseja realizar")
@@ -22,6 +23,7 @@ def login_adm():
             print("Tente novamente")
 
 def add_funcionario():
+    os.system('cls')
     print("Digite as informações pedidas a seguir")
     rg_funcionario = input("Digite o RG: ")
     cpf_funcionario = input("Digite o CPF: ")
@@ -31,11 +33,9 @@ def add_funcionario():
     turno = input("Digite o turno: ")
     telefone_funcionario = input("Digite o telefone para contato: ")
     insercao_add_funcionario(rg_funcionario, cpf_funcionario, nome_funcionario, idade_funcionario, salario, turno, telefone_funcionario)
-
-
     
-
 def add_cliente():
+    os.system('cls')
     print("Digite as informações pedidas a seguir")
     rg_cliente = input("Digite o RG: ")
     cpf_cliente = input("Digite o CPF: ")
@@ -45,6 +45,7 @@ def add_cliente():
     insercao_add_cliente(rg_cliente, cpf_cliente, nome_cliente, endereco_cliente, telefone_cliente)
 
 def add_remedio():
+    os.system('cls')
     print("Digite as informações pedidas a seguir")
     nome_remedio = input("Digite o nome: ")
     marca = input("Digte a marca: ")
