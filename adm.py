@@ -1,6 +1,8 @@
 import os
 import psycopg2
 from db import insercao_add_funcionario
+from db import insercao_add_cliente
+from db import insercao_add_remedio
 def login_adm():
     while(True):
         print("Escolha qual ação deseja realizar")
@@ -40,6 +42,7 @@ def add_cliente():
     nome_cliente = input("Digite o nome: ")
     endereco_cliente = input("Digite o endereço: ")
     telefone_cliente = input("Digite o telefone para contato: ")
+    insercao_add_cliente(rg_cliente, cpf_cliente, nome_cliente, endereco_cliente, telefone_cliente)
 
 def add_remedio():
     print("Digite as informações pedidas a seguir")
@@ -49,3 +52,4 @@ def add_remedio():
     categoria = input("Digite a categoria: ")
     codigo = input("Digite o codigo: ")
     preco = float(input("Digite o preço: "))
+    insercao_add_remedio(nome_remedio, marca, tarja, categoria, codigo, preco)
