@@ -22,11 +22,11 @@ cadastros_funcionario = [
     ]
 #Função para o adm entrar no sistema
 def login_adm():
-    email = input("Digite seu email: ")
-    senha = input("Digite sua senha: ")
+    email_adm = input("Digite seu email: ")
+    senha_adm = input("Digite sua senha: ")
 
     for login in cadastros_admin:
-        if login['email'] == email and login['senha'] == senha:
+        if login['email'] == email_adm and login['senha'] == senha_adm:
             print("Acesso liberado!")
             return True
         else:
@@ -34,11 +34,11 @@ def login_adm():
             return False
 #Função para o funcionario entrar no sistema
 def login_funcionario():
-    email = input("Digite seu email: ")
-    senha = input("Digite sua senha: ")
+    email_func = input("Digite seu email: ")
+    senha_func = input("Digite sua senha: ")
 
     for login in cadastros_funcionario:
-        if login['email'] == email and login['senha'] == senha:
+        if login['email'] == email_func and login['senha'] == senha_func:
             print("Acesso liberado!")
             return True
         else:
