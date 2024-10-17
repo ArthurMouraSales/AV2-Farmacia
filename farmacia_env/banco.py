@@ -80,6 +80,26 @@ def insercao_add_remedio(nome_remedio, marca, tarja, categoria, codigo, preco):
         cursor.close()
 
         conn.close()
+    
+def insercao_add_venda(id_funcionario, id_cliente, id_remedio, valor_final, forma_pagamento, data_venda):
+    conn = conexao()
+    try: 
+        cursor = conn.cursor()
+        
+        query = "INSERT INTO vendas(id_funcionario, id_cliente, id_remedio, valor_final, forma_pagamento, data_venda)VALUES(%s, %s, %s, %s, %s, %s);"
+        
+        cursor.execute(query,(id_funcionario, id_cliente, id_remedio, valor_final, forma_pagamento, data_venda))
+        
+        conn.commit()
+        
+        print("Venda informada com sucesso!")
+    except Exception as e:
+        print(f"Erro ao informar a venda: {e}")
+    finally: 
+        
+        cursor.close()
+        
+        conn.close()
 
 def selecao_cliente():
     conn = conexao()
@@ -103,3 +123,72 @@ def selecao_cliente():
         cursor.close()
 
         conn.close()
+
+def selecao_venda():
+    conn = conexao()
+    try:
+        
+        cursor = conn.cursor()
+    
+        query = "SELECT * FROM vendas"
+        
+        cursor.execute(query)
+        
+        selecionar_venda = cursor.fetchall()
+        print(selecionar_venda)
+        
+        conn.commit()
+    except Exception as e:
+        
+        print(f"Erro: {e}")  
+    finally:
+        
+        cursor.close()
+        
+        conn.close()
+
+def selecao_funcionario():
+    conn = conexao()
+    try:
+        
+        cursor = conn.cursor()
+    
+        query = "SELECT * FROM funcionarios"
+        
+        cursor.execute(query)
+        
+        selecionar_funcionario = cursor.fetchall()
+        print(selecionar_funcionario)
+        
+        conn.commit()
+    except Exception as e:
+        
+        print(f"Erro: {e}")  
+    finally:
+        
+        cursor.close()
+        
+        conn.close()
+
+def selecao_remedio():
+    conn = conexao()
+    try:
+        
+        cursor = conn.cursor()
+    
+        query = "SELECT * FROM remedios"
+        
+        cursor.execute(query)
+        
+        selecionar_remedio = cursor.fetchall()
+        print(selecionar_remedio)
+        
+        conn.commit()
+    except Exception as e:
+        
+        print(f"Erro: {e}")  
+    finally:
+        
+        cursor.close()
+        
+        conn.close()

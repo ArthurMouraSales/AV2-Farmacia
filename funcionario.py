@@ -1,5 +1,6 @@
 import os
 from banco import selecao_cliente
+from banco import insercao_add_venda
 def login_funcionario():
     while(True):
         print("Escolha qual ação deseja realizar")
@@ -25,6 +26,8 @@ def venda():
     id_funcionario = int(input("Informe o ID do funcionario:  "))
     id_cliente = int(input("Informe o ID do cliente:  "))
     id_remedio = int(input("Informe o ID do remédio:  "))
-    valor_final =  int(input("Informe o valor final da compra:  "))
-    forma_pagamento = int(input("Informe a forma de pagamento:  "))
-    data_venda = int(input("Informe a data da venda:  "))
+    valor_final =  float(input("Informe o valor final da compra:  "))
+    forma_pagamento = input("Informe a forma de pagamento:  ")
+    data_venda = input("Informe a data da venda:  ")
+    insercao_add_venda(id_funcionario, id_cliente, id_remedio, valor_final, forma_pagamento, data_venda)
+    
