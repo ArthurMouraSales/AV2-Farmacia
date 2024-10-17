@@ -11,7 +11,6 @@ while(True):
         print("Você esta na aba de funcionario")
         acesso_funcionario()
     elif opcao == 3:
-        print("opção 3 main")
         break
     else:
         print("Algum erro ocorreu na digitação da opção")
