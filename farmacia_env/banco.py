@@ -80,3 +80,21 @@ def insercao_add_remedio(nome_remedio, marca, tarja, categoria, codigo, preco):
         cursor.close()
 
         conn.close()
+
+def selecao_cliente();
+    conn = conexao()
+    try:
+        cursor = connection.cursor()
+        postgreSQL_select_Query = "select * from clientes"
+
+        cursor.execute(postgreSQL_select_Query)
+        
+        Baking = cursor.fetchall()
+        print(Baking)
+    except Exception as e:
+         print(f"Erro ao inserir o remedio: {e}")
+    finally:
+
+        cursor.close()
+
+        conn.close()
