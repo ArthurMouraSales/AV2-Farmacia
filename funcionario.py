@@ -1,13 +1,17 @@
 import os
+from banco import selecao_cliente
 def login_funcionario():
     while(True):
         print("Escolha qual ação deseja realizar")
-        print("1 - Realizar venda | 2 - Sair")
+        print("1 - Realizar venda | 2 - Consultar clientes | 3 - Sair")
         opc_funcionario = int(input("Digite sua escolha: "))
         if opc_funcionario == 1:
             os.system('cls')
             venda()
         elif opc_funcionario == 2:
+            os.system('cls')
+            selecao_cliente()
+        elif opc_funcionario == 3:
             os.system('cls')
             return
         else:
@@ -16,5 +20,11 @@ def login_funcionario():
             print("Tente novamente")
 
 def venda():
-    os.system('cls')
-    print("função de venda")
+    
+    print("Digite as informações pedidas a seguir.")
+    id_funcionario = int(input("Informe o ID do funcionario:  "))
+    id_cliente = int(input("Informe o ID do cliente:  "))
+    id_remedio = int(input("Informe o ID do remédio:  "))
+    valor_final =  int(input("Informe o valor final da compra:  "))
+    forma_pagamento = int(input("Informe a forma de pagamento:  "))
+    data_venda = int(input("Informe a data da venda:  "))
