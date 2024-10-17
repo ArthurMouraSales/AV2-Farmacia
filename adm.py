@@ -7,7 +7,7 @@ from banco import selecao_cliente
 from banco import selecao_funcionario
 from banco import selecao_remedio
 from verificacao import login_adm
-
+#Função para acessar as possibilidades que o adm tem no sistema
 def acesso_adm():
     if login_adm() == True:
         while(True):
@@ -34,7 +34,7 @@ def acesso_adm():
                 print("Tente novamente")
     else:
         return
-
+#Função para obter as informações de um novo funcionario
 def add_funcionario():
     os.system('cls')
     print("Digite as informações pedidas a seguir")
@@ -46,7 +46,7 @@ def add_funcionario():
     turno = input("Digite o turno: ")
     telefone_funcionario = input("Digite o telefone para contato: ")
     insercao_funcionario(rg_funcionario, cpf_funcionario, nome_funcionario, idade_funcionario, salario, turno, telefone_funcionario)
-    
+#Função para obter as informações de um novo cliente   
 def add_cliente():
     os.system('cls')
     print("Digite as informações pedidas a seguir")
@@ -56,7 +56,7 @@ def add_cliente():
     endereco_cliente = input("Digite o endereço: ")
     telefone_cliente = input("Digite o telefone para contato: ")
     insercao_cliente(rg_cliente, cpf_cliente, nome_cliente, endereco_cliente, telefone_cliente)
-
+#Função para obter as informações de um novo remedio
 def add_remedio():
     os.system('cls')
     print("Digite as informações pedidas a seguir")
