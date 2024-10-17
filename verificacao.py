@@ -1,3 +1,4 @@
+#Lista de cadastros adm com acesso
 cadastros_admin = [
         {
             "email": "arthur.sales@gmail.com",
@@ -8,7 +9,7 @@ cadastros_admin = [
             "senha": "admin02"   
         },
     ]
-
+#Lista de cadastros funcionarios com acesso
 cadastros_funcionario = [        
         {
             "email": "funcionario.01@gmail.com",
@@ -19,7 +20,7 @@ cadastros_funcionario = [
             "senha": "func02"   
         },
     ]
-
+#Função para o adm entrar no sistema
 def login_adm():
     email = input("Digite seu email: ")
     senha = input("Digite sua senha: ")
@@ -31,8 +32,8 @@ def login_adm():
         else:
             print("Acesso negado!")
             return False
-        
-def login_func():
+#Função para o funcionario entrar no sistema
+def login_funcionario():
     email = input("Digite seu email: ")
     senha = input("Digite sua senha: ")
 

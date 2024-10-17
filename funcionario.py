@@ -1,9 +1,12 @@
 import os
 from banco import selecao_cliente
 from banco import insercao_venda
-from verificacao import login_func
+from verificacao import login_funcionario
+from verificacao import login_adm
+#Função para acessar as possibilidades que o funcionario tem no sistema
 def acesso_funcionario():
-    if login_func() == True:
+    #Verificação se a pessoa pode acessar essa aba
+    if login_funcionario() == True or login_adm() == True:
         while(True):
             print("Escolha qual ação deseja realizar")
             print("1 - Realizar venda | 2 - Consultar clientes | 3 - Sair")
@@ -24,8 +27,8 @@ def acesso_funcionario():
     else:
         return
 
+#Função que pega as informações sobre a venda
 def venda():
-    
     print("Digite as informações pedidas a seguir.")
     id_funcionario = int(input("Informe o ID do funcionario:  "))
     id_cliente = int(input("Informe o ID do cliente:  "))
