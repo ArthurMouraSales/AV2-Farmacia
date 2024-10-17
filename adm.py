@@ -7,6 +7,7 @@ from banco import selecao_cliente
 from banco import selecao_funcionario
 from banco import selecao_remedio
 from verificacao import login_adm
+
 #Função para acessar as possibilidades que o adm tem no sistema
 def acesso_adm():
     if login_adm() == True:
@@ -67,4 +68,3 @@ def add_remedio():
     codigo = input("Digite o codigo: ")
     preco = float(input("Digite o preço: "))
     insercao_remedio(nome_remedio, marca, tarja, categoria, codigo, preco)
-

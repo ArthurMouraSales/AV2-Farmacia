@@ -2,7 +2,8 @@ import os
 from adm import acesso_adm
 from funcionario import acesso_funcionario
 while(True):
-    #Area de escolher onde a pessoa quer acessar
+    #Area de escolha onde a pessoa quer acessar
+    print("Seja bem vindo ao sistema interno de nossa empresa!")
     print("1 - Login ADM | 2 - Login Funcionario | 3 - Finalizar")
     opcao = int(input("Digite uma das opções sinalizadas acima: "))
     if opcao == 1:

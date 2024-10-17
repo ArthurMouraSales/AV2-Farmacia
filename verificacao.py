@@ -1,23 +1,15 @@
 #Lista de cadastros adm com acesso
 cadastros_admin = [
         {
-            "email": "arthur.sales@gmail.com",
-            "senha": "admin01"
-        },
-        {
-            "email": "leonardo.salamoni@gmail.com",
-            "senha": "admin02"   
+            "email_adm": "arthur.sales@gmail.com",
+            "senha_adm": "admin01"
         },
     ]
 #Lista de cadastros funcionarios com acesso
 cadastros_funcionario = [        
         {
-            "email": "funcionario.01@gmail.com",
-            "senha": "func01"   
-        },
-        {
-            "email": "funcionario.02@gmail.com",
-            "senha": "func02"   
+            "email_func": "funcionario.01@gmail.com",
+            "senha_func": "func01"   
         },
     ]
 #Função para o adm entrar no sistema
@@ -26,7 +18,7 @@ def login_adm():
     senha_adm = input("Digite sua senha: ")
 
     for login in cadastros_admin:
-        if login['email'] == email_adm and login['senha'] == senha_adm:
+        if login['email_adm'] == email_adm and login['senha_adm'] == senha_adm:
             print("Acesso liberado!")
             return True
         else:
@@ -38,7 +30,7 @@ def login_funcionario():
     senha_func = input("Digite sua senha: ")
 
     for login in cadastros_funcionario:
-        if login['email'] == email_func and login['senha'] == senha_func:
+        if login['email_func'] == email_func and login['senha_func'] == senha_func:
             print("Acesso liberado!")
             return True
         else:
