@@ -191,4 +191,4 @@ def selecao_remedio():
         
         cursor.close()
         
-        conn.close()
+        conn.close()

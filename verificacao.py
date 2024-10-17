@@ -1,4 +1,4 @@
-cadastros = [
+cadastros_admin = [
         {
             "email": "arthur.sales@gmail.com",
             "senha": "admin01"
@@ -7,6 +7,9 @@ cadastros = [
             "email": "leonardo.salamoni@gmail.com",
             "senha": "admin02"   
         },
+    ]
+
+cadastros_funcionario = [        
         {
             "email": "funcionario.01@gmail.com",
             "senha": "func01"   
@@ -17,17 +20,27 @@ cadastros = [
         },
     ]
 
-def login():
+def login_adm():
     email = input("Digite seu email: ")
     senha = input("Digite sua senha: ")
 
-    for login in cadastros:
+    for login in cadastros_admin:
         if login['email'] == email and login['senha'] == senha:
             print("Acesso liberado!")
-            return
+            return True
         else:
             print("Acesso negado!")
-            return 
+            return False
+        
+def login_func():
+    email = input("Digite seu email: ")
+    senha = input("Digite sua senha: ")
 
-login()
+    for login in cadastros_funcionario:
+        if login['email'] == email and login['senha'] == senha:
+            print("Acesso liberado!")
+            return True
+        else:
+            print("Acesso negado!")
+            return False
     

@@ -1,24 +1,28 @@
 import os
 from banco import selecao_cliente
 from banco import insercao_add_venda
-def login_funcionario():
-    while(True):
-        print("Escolha qual ação deseja realizar")
-        print("1 - Realizar venda | 2 - Consultar clientes | 3 - Sair")
-        opc_funcionario = int(input("Digite sua escolha: "))
-        if opc_funcionario == 1:
-            os.system('cls')
-            venda()
-        elif opc_funcionario == 2:
-            os.system('cls')
-            selecao_cliente()
-        elif opc_funcionario == 3:
-            os.system('cls')
-            return
-        else:
-            os.system('cls')
-            print("Algum erro ocorreu na digitação da opção")
-            print("Tente novamente")
+from verificacao import login_func
+def acesso_funcionario():
+    if login_func() == True:
+        while(True):
+            print("Escolha qual ação deseja realizar")
+            print("1 - Realizar venda | 2 - Consultar clientes | 3 - Sair")
+            opc_funcionario = int(input("Digite sua escolha: "))
+            if opc_funcionario == 1:
+                os.system('cls')
+                venda()
+            elif opc_funcionario == 2:
+                os.system('cls')
+                selecao_cliente()
+            elif opc_funcionario == 3:
+                os.system('cls')
+                return
+            else:
+                os.system('cls')
+                print("Algum erro ocorreu na digitação da opção")
+                print("Tente novamente")
+    else:
+        return
 
 def venda():
     
