@@ -1,6 +1,6 @@
 import os
 from banco import selecao_cliente
-from banco import insercao_add_venda
+from banco import insercao_venda
 from verificacao import login_func
 def acesso_funcionario():
     if login_func() == True:
@@ -33,5 +33,5 @@ def venda():
     valor_final =  float(input("Informe o valor final da compra:  "))
     forma_pagamento = input("Informe a forma de pagamento:  ")
     data_venda = input("Informe a data da venda:  ")
-    insercao_add_venda(id_funcionario, id_cliente, id_remedio, valor_final, forma_pagamento, data_venda)
+    insercao_venda(id_funcionario, id_cliente, id_remedio, valor_final, forma_pagamento, data_venda)
     

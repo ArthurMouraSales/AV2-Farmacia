@@ -1,8 +1,8 @@
 import os
 import psycopg2
-from banco import insercao_add_funcionario
-from banco import insercao_add_cliente
-from banco import insercao_add_remedio
+from banco import insercao_funcionario
+from banco import insercao_cliente
+from banco import insercao_remedio
 from banco import selecao_cliente
 from banco import selecao_funcionario
 from banco import selecao_remedio
@@ -45,7 +45,7 @@ def add_funcionario():
     salario = float(input("Digite o salario: "))
     turno = input("Digite o turno: ")
     telefone_funcionario = input("Digite o telefone para contato: ")
-    insercao_add_funcionario(rg_funcionario, cpf_funcionario, nome_funcionario, idade_funcionario, salario, turno, telefone_funcionario)
+    insercao_funcionario(rg_funcionario, cpf_funcionario, nome_funcionario, idade_funcionario, salario, turno, telefone_funcionario)
     
 def add_cliente():
     os.system('cls')
@@ -55,7 +55,7 @@ def add_cliente():
     nome_cliente = input("Digite o nome: ")
     endereco_cliente = input("Digite o endereço: ")
     telefone_cliente = input("Digite o telefone para contato: ")
-    insercao_add_cliente(rg_cliente, cpf_cliente, nome_cliente, endereco_cliente, telefone_cliente)
+    insercao_cliente(rg_cliente, cpf_cliente, nome_cliente, endereco_cliente, telefone_cliente)
 
 def add_remedio():
     os.system('cls')
@@ -66,5 +66,5 @@ def add_remedio():
     categoria = input("Digite a categoria: ")
     codigo = input("Digite o codigo: ")
     preco = float(input("Digite o preço: "))
-    insercao_add_remedio(nome_remedio, marca, tarja, categoria, codigo, preco)
+    insercao_remedio(nome_remedio, marca, tarja, categoria, codigo, preco)
 

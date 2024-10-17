@@ -1,5 +1,5 @@
 import psycopg2 
-
+#Função para conectar no banco de dados
 def conexao():
     try:
         conn = psycopg2.connect(
@@ -14,8 +14,8 @@ def conexao():
     except Exception as e:
         print(f"Erro ao conectar com o banco de dados: {e}")
         return None
-
-def insercao_add_cliente(rg_cliente, cpf_cliente, nome_cliente, endereco_cliente, telefone_cliente):
+#Função para inserir informações de um novo cliente
+def insercao_cliente(rg_cliente, cpf_cliente, nome_cliente, endereco_cliente, telefone_cliente):
     conn = conexao()
     try:
 
@@ -36,8 +36,8 @@ def insercao_add_cliente(rg_cliente, cpf_cliente, nome_cliente, endereco_cliente
         cursor.close()
 
         conn.close()
-
-def insercao_add_funcionario(rg_funcionario, cpf_funcionario, nome_funcionario, idade_funcionario, salario, turno, telefone_funcionario):
+#Função para adicionar informações de um novo funcionario
+def insercao_funcionario(rg_funcionario, cpf_funcionario, nome_funcionario, idade_funcionario, salario, turno, telefone_funcionario):
     conn = conexao()
     try:
 
@@ -58,8 +58,8 @@ def insercao_add_funcionario(rg_funcionario, cpf_funcionario, nome_funcionario, 
         cursor.close()
 
         conn.close()
-
-def insercao_add_remedio(nome_remedio, marca, tarja, categoria, codigo, preco):
+#Função para cadastrar um novo remedio
+def insercao_remedio(nome_remedio, marca, tarja, categoria, codigo, preco):
     conn = conexao()
     try:
 
@@ -80,8 +80,8 @@ def insercao_add_remedio(nome_remedio, marca, tarja, categoria, codigo, preco):
         cursor.close()
 
         conn.close()
-    
-def insercao_add_venda(id_funcionario, id_cliente, id_remedio, valor_final, forma_pagamento, data_venda):
+#Função para inserir uma nova venda
+def insercao_venda(id_funcionario, id_cliente, id_remedio, valor_final, forma_pagamento, data_venda):
     conn = conexao()
     try: 
         cursor = conn.cursor()
@@ -100,7 +100,7 @@ def insercao_add_venda(id_funcionario, id_cliente, id_remedio, valor_final, form
         cursor.close()
         
         conn.close()
-
+#Função para verificar as informações dos clientes
 def selecao_cliente():
     conn = conexao()
     try:
@@ -123,7 +123,7 @@ def selecao_cliente():
         cursor.close()
 
         conn.close()
-
+#Função para verificar as informações das vendas feitas
 def selecao_venda():
     conn = conexao()
     try:
@@ -146,7 +146,7 @@ def selecao_venda():
         cursor.close()
         
         conn.close()
-
+#Função para verificar as informações do funcionario
 def selecao_funcionario():
     conn = conexao()
     try:
@@ -169,7 +169,7 @@ def selecao_funcionario():
         cursor.close()
         
         conn.close()
-
+#Função para verificar os remedios que estão cadastrados
 def selecao_remedio():
     conn = conexao()
     try:
