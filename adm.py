@@ -51,12 +51,12 @@ def add_funcionario():
 def add_cliente():
     os.system('cls')
     print("Digite as informações pedidas a seguir")
-    rg_cliente = input("Digite o RG: ")
-    cpf_cliente = input("Digite o CPF: ")
+    rg = input("Digite o RG: ")
+    cpf = input("Digite o CPF: ")
     nome_cliente = input("Digite o nome: ")
     endereco_cliente = input("Digite o endereço: ")
     telefone_cliente = input("Digite o telefone para contato: ")
-    insercao_cliente(rg_cliente, cpf_cliente, nome_cliente, endereco_cliente, telefone_cliente)
+    insercao_cliente(rg, cpf, nome_cliente, endereco_cliente, telefone_cliente)
 #Função para obter as informações de um novo remedio
 def add_remedio():
     os.system('cls')

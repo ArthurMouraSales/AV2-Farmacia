@@ -15,15 +15,15 @@ def conexao():
         print(f"Erro ao conectar com o banco de dados: {e}")
         return None
 #Função para inserir informações de um novo cliente
-def insercao_cliente(rg_cliente, cpf_cliente, nome_cliente, endereco_cliente, telefone_cliente):
+def insercao_cliente(rg, cpf, nome_cliente, endereco_cliente, telefone_cliente):
     conn = conexao()
     try:
 
         cursor = conn.cursor()
 
-        query = "INSERT INTO clientes (rg_cliente, cpf_cliente, nome_cliente, endereco_cliente, telefone_cliente) VALUES (%s, %s, %s, %s, %s);"
+        query = "INSERT INTO clientes (rg, cpf, nome_cliente, endereco_cliente, telefone_cliente) VALUES (%s, %s, %s, %s, %s);"
 
-        cursor.execute(query, (rg_cliente, cpf_cliente, nome_cliente, endereco_cliente, telefone_cliente))
+        cursor.execute(query, (rg, cpf, nome_cliente, endereco_cliente, telefone_cliente))
 
         conn.commit()
 
