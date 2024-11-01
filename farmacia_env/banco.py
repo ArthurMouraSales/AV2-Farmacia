@@ -9,7 +9,6 @@ def conexao():
             host = 'localhost',
             port = '5432'
         )
-        print("Conexão realizada com sucesso!")
         return conn
     except Exception as e:
         print(f"Erro ao conectar com o banco de dados: {e}")
@@ -153,3 +152,4 @@ def selecao_remedio():
     finally:
         cursor.close()
         conn.close()
+

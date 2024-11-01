@@ -2,8 +2,8 @@ import os
 #Lista de cadastros adm com acesso
 cadastros_admin = [
         {
-            "email_adm": "arthur.sales@gmail.com",
-            "senha_adm": "admin01"
+            "email_adm": "arthur",
+            "senha_adm": "admin"
         },
         {
             "email_adm": "admin",
