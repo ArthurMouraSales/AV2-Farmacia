@@ -1,19 +1,13 @@
 import os
 import psycopg2
-from banco import insercao_funcionario
-from banco import insercao_cliente
-from banco import insercao_remedio
-from banco import selecao_cliente
-from banco import selecao_funcionario
-from banco import selecao_remedio
+from banco import insercao_funcionario, insercao_cliente, insercao_remedio, selecao_cliente, selecao_funcionario, selecao_remedio
 from verificacao import login_adm
-
+from menus import menu_adm
 #Função para acessar as possibilidades que o adm tem no sistema
 def acesso_adm():
     if login_adm() == True:
         while(True):
-            print("Escolha qual ação deseja realizar")
-            print("1 - Cadastro novo funcionario | 2 - Cadastro novo cliente | 3 - Cadastro novo remedio | 4 - Listar funcionarios | 5 - Listar clientes | 6 - Listar remedios | 7 - Sair")
+            menu_adm()
             opc_adm = int(input("Digite sua escolha: "))
             if opc_adm == 1:
                 add_funcionario()
