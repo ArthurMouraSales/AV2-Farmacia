@@ -228,10 +228,27 @@ def selecao_info_remedios():
     try:
         
         cursor = conn.cursor()
-        query = ""
+        query = "select r.id_remedio, r.nome_remedio, r.preco_remedio from remedios r;"
         cursor.execute(query)
         selecionar_info_remedios = cursor.fetchall()
         print(selecionar_info_remedios)
+        
+        conn.commit()
+    except Exception as e:
+        print(f"Erro: {e}")  
+    finally:
+        cursor.close()
+        conn.close()
+
+def selecao_info_vendas():
+        conn = conexao()
+    try:
+        
+        cursor = conn.cursor()
+        query = "select v.id_venda, v.data_venda from vendas v;"
+        cursor.execute(query)
+        selecionar_info_vendas = cursor.fetchall()
+        print(selecionar_info_vendas)
         
         conn.commit()
     except Exception as e:
