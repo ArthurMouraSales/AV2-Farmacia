@@ -14,13 +14,13 @@ def conexao():
         print(f"Erro ao conectar com o banco de dados: {e}")
         return None
 #Função para inserir informações de um novo cliente
-def insercao_cliente(rg, cpf, nome_cliente, endereco_cliente, telefone_cliente):
+def insercao_cliente(cpf, nome_cliente, endereco_cliente, telefone_cliente):
     conn = conexao()
     try:
 
         cursor = conn.cursor()
-        query = "INSERT INTO clientes (rg, cpf, nome_cliente, endereco_cliente, telefone_cliente) VALUES (%s, %s, %s, %s, %s);"
-        cursor.execute(query, (rg, cpf, nome_cliente, endereco_cliente, telefone_cliente))
+        query = "INSERT INTO clientes (cpf, nome_cliente, endereco_cliente, telefone_cliente) VALUES (%s, %s, %s, %s, %s);"
+        cursor.execute(query, (cpf, nome_cliente, endereco_cliente, telefone_cliente))
         conn.commit()
 
         print("Cliente inserido com sucesso!")
@@ -31,13 +31,13 @@ def insercao_cliente(rg, cpf, nome_cliente, endereco_cliente, telefone_cliente):
         conn.close()
 
 #Função para adicionar informações de um novo funcionario
-def insercao_funcionario(rg_funcionario, cpf_funcionario, nome_funcionario, idade_funcionario, salario, turno, telefone_funcionario):
+def insercao_funcionario(cpf_funcionario, nome_funcionario, idade_funcionario, salario, turno, telefone_funcionario):
     conn = conexao()
     try:
 
         cursor = conn.cursor()
-        query = "INSERT INTO funcionarios (rg_funcionario, cpf_funcionario, nome_funcionario, idade_funcionario, salario, turno, telefone_funcionario) VALUES (%s, %s, %s, %s, %s, %s, %s);"
-        cursor.execute(query, (rg_funcionario, cpf_funcionario, nome_funcionario, idade_funcionario, salario, turno, telefone_funcionario))
+        query = "INSERT INTO funcionarios (cpf_funcionario, nome_funcionario, idade_funcionario, salario, turno, telefone_funcionario) VALUES (%s, %s, %s, %s, %s, %s, %s);"
+        cursor.execute(query, (cpf_funcionario, nome_funcionario, idade_funcionario, salario, turno, telefone_funcionario))
         conn.commit()
 
         print("Funcionario inserido com sucesso!")
