@@ -1,5 +1,5 @@
 import os
-from banco import selecao_cliente
+from banco import selecao_cliente, selecao_geral_vendas
 from banco import insercao_venda
 from verificacao import login_funcionario
 from verificacao import login_adm
@@ -9,7 +9,7 @@ def acesso_funcionario():
     if login_funcionario() == True or login_adm() == True:
         while(True):
             print("Escolha qual ação deseja realizar")
-            print("1 - Realizar venda | 2 - Consultar clientes | 3 - Sair")
+            print("1 - Realizar venda | 2 - Consultar clientes | 3 - Selecionar todas as vendas | 4 - Sair")
             opc_funcionario = int(input("Digite sua escolha: "))
             if opc_funcionario == 1:
                 os.system('cls')
@@ -18,6 +18,8 @@ def acesso_funcionario():
                 os.system('cls')
                 selecao_cliente()
             elif opc_funcionario == 3:
+                selecao_geral_vendas()
+            elif opc_funcionario == 4:
                 os.system('cls')
                 return
             else:

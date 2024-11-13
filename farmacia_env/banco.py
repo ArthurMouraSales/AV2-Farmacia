@@ -153,3 +153,20 @@ def selecao_remedio():
         cursor.close()
         conn.close()
 
+
+def selecao_geral_vendas():
+    conn = conexao()
+    try:
+        
+        cursor = conn.cursor()
+        query = "select v.id_venda, c.nome_cliente, f.nome_funcionario, r.nome_remedio, v.valor_final, v.forma_pagamento, v.data_venda from vendas v inner join clientes c on v.id_cliente = c.id_cliente inner join funcionarios f on v.id_funcionario = f.id_funcionario inner join remedios r on v.id_remedio = r.id_remedio;"
+        cursor.execute(query)
+        selecionar_vendas = cursor.fetchall()
+        print(selecionar_vendas)
+        
+        conn.commit()
+    except Exception as e:
+        print(f"Erro: {e}")  
+    finally:
+        cursor.close()
+        conn.close()
