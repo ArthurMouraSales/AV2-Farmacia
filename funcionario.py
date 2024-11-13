@@ -1,5 +1,5 @@
 import os
-from banco import selecao_cliente, selecao_geral_vendas, insercao_venda
+from banco import selecao_cliente, selecao_geral_vendas, insercao_venda, selecao_venda_funcionario
 from verificacao import login_funcionario, login_adm
 from menus import menu_funcionario
 
@@ -17,8 +17,13 @@ def acesso_funcionario():
                 os.system('cls')
                 selecao_cliente()
             elif opc_funcionario == 3:
+                os.system('cls')
                 selecao_geral_vendas()
             elif opc_funcionario == 4:
+                os.system('cls')
+                id_funcionario = input("Digite do id do funcionario que voce deseja verificar: ")
+                selecao_venda_funcionario(id_funcionario)
+            elif opc_funcionario == 5:
                 os.system('cls')
                 return
             else:
