@@ -3,16 +3,13 @@ from banco import insercao_venda, selecao_info_cliente, selecao_info_funcionario
 from verificacao import login_funcionario, login_adm
 from menus import menu_funcionario
 
-#Função para acessar as possibilidades que o funcionario tem no sistema
 def acesso_funcionario():
-    #Verificação se a pessoa pode acessar essa aba
     if login_funcionario() == True or login_adm() == True:
         while(True):
             menu_funcionario()
     else:
         return
 
-#Função que pega as informações sobre a venda
 def venda():
     print("Digite as informações pedidas a seguir.")
     selecao_info_funcionario()
