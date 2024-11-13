@@ -15,3 +15,11 @@ def menu_principal():
     1 - Login ADM
     2 - Login Funcionario
     3 - Finalizar""")
+
+def menu_funcionario():
+    print("Escolha qual ação deseja realizar")
+    print("""
+    1 - Realizar venda
+    2 - Consultar clientes
+    3 - Selecionar todas as vendas
+    4 - Sair""")

@@ -1,15 +1,14 @@
 import os
-from banco import selecao_cliente, selecao_geral_vendas
-from banco import insercao_venda
-from verificacao import login_funcionario
-from verificacao import login_adm
+from banco import selecao_cliente, selecao_geral_vendas, insercao_venda
+from verificacao import login_funcionario, login_adm
+from menus import menu_funcionario
+
 #Função para acessar as possibilidades que o funcionario tem no sistema
 def acesso_funcionario():
     #Verificação se a pessoa pode acessar essa aba
     if login_funcionario() == True or login_adm() == True:
         while(True):
-            print("Escolha qual ação deseja realizar")
-            print("1 - Realizar venda | 2 - Consultar clientes | 3 - Selecionar todas as vendas | 4 - Sair")
+            menu_funcionario()
             opc_funcionario = int(input("Digite sua escolha: "))
             if opc_funcionario == 1:
                 os.system('cls')
