@@ -1,5 +1,5 @@
 import os
-from banco import selecao_cliente, selecao_geral_vendas, selecao_venda_funcionario
+from banco import selecao_cliente, selecao_geral_vendas, selecao_venda_funcionario, selecao_info_funcionario
 from funcionario import venda
 
 def menu_adm():
@@ -28,7 +28,9 @@ def menu_funcionario():
     1 - Realizar venda
     2 - Consultar clientes
     3 - Selecionar todas as vendas
-    4 - Sair
+    4 - Vendas diaria do funcionario
+    5 - 
+    10 - Sair
     --------------------------------------""")
     opc_funcionario = int(input("Digite sua escolha: "))
     if opc_funcionario == 1:
@@ -42,9 +44,12 @@ def menu_funcionario():
         selecao_geral_vendas()
     elif opc_funcionario == 4:
         os.system('cls')
+        selecao_info_funcionario()
         id_funcionario = input("Digite do id do funcionario que voce deseja verificar: ")
         selecao_venda_funcionario(id_funcionario)
     elif opc_funcionario == 5:
+        os.system('cls')
+    elif opc_funcionario == 10:
         os.system('cls')
         return
     else:

@@ -161,8 +161,8 @@ def selecao_geral_vendas():
         cursor = conn.cursor()
         query = "select v.id_venda, c.nome_cliente, f.nome_funcionario, r.nome_remedio, v.valor_final, v.forma_pagamento, v.data_venda from vendas v inner join clientes c on v.id_cliente = c.id_cliente inner join funcionarios f on v.id_funcionario = f.id_funcionario inner join remedios r on v.id_remedio = r.id_remedio;"
         cursor.execute(query)
-        selecionar_vendas = cursor.fetchall()
-        print(selecionar_vendas)
+        selecionar_geral_vendas = cursor.fetchall()
+        print(selecionar_geral_vendas)
         
         conn.commit()
     except Exception as e:
@@ -179,8 +179,59 @@ def selecao_venda_funcionario(id_funcionario):
         cursor = conn.cursor()
         query = "select v.id_venda, c.nome_cliente, r.nome_remedio, v.valor_final, v.forma_pagamento, v.data_venda from vendas v inner join clientes c on v.id_cliente = c.id_cliente inner join remedios r on  v.id_remedio = r.id_remedio where v.id_funcionario = %s"
         cursor.execute(query,(id_funcionario))
-        selecionar_vendas = cursor.fetchall()
-        print(selecionar_vendas)
+        selecionar_vendas_funcionario = cursor.fetchall()
+        print(selecionar_vendas_funcionario)
+        
+        conn.commit()
+    except Exception as e:
+        print(f"Erro: {e}")  
+    finally:
+        cursor.close()
+        conn.close()
+
+def selecao_info_funcionario():
+    conn = conexao()
+    try:
+        
+        cursor = conn.cursor()
+        query = "select f.id_funcionario, f.nome_funcionario from funcionarios f;"
+        cursor.execute(query)
+        selecionar_info_funcionarios = cursor.fetchall()
+        print(selecionar_info_funcionarios)
+        
+        conn.commit()
+    except Exception as e:
+        print(f"Erro: {e}")  
+    finally:
+        cursor.close()
+        conn.close()
+
+def selecao_info_cliente():
+    conn = conexao()
+    try:
+        
+        cursor = conn.cursor()
+        query = "select c.id_cliente, c.nome_cliente, c.cpf from clientes c;"
+        cursor.execute(query)
+        selecionar_info_clientes = cursor.fetchall()
+        print(selecionar_info_clientes)
+        
+        conn.commit()
+    except Exception as e:
+        print(f"Erro: {e}")  
+    finally:
+        cursor.close()
+        conn.close()
+
+def selecao_info_remedios():
+    conn = conexao()
+    try:
+        
+        cursor = conn.cursor()
+        query = ""
+        cursor.execute(query)
+        selecionar_info_remedios = cursor.fetchall()
+        print(selecionar_info_remedios)
         
         conn.commit()
     except Exception as e:
