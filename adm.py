@@ -8,27 +8,9 @@ def acesso_adm():
     if login_adm() == True:
         while(True):
             menu_adm()
-            opc_adm = int(input("Digite sua escolha: "))
-            if opc_adm == 1:
-                add_funcionario()
-            elif opc_adm == 2:
-                add_cliente()
-            elif opc_adm == 3:
-                add_remedio()
-            elif opc_adm == 4:
-                selecao_funcionario()
-            elif opc_adm == 5:
-                selecao_cliente()
-            elif opc_adm == 6:
-                selecao_remedio()
-            elif opc_adm == 7:
-                print("Sair")
-                return
-            else:
-                print("Algum erro ocorreu na digitação da opção")
-                print("Tente novamente")
     else:
         return
+
 #Função para obter as informações de um novo funcionario
 def add_funcionario():
     os.system('cls')
