@@ -14,7 +14,8 @@ def acesso_funcionario():
             4 - Vendas diaria do funcionario
             5 - Consultar remedios que não foram vendidos
             10 - Sair
-            --------------------------------------""")
+            --------------------------------------
+            """)
             
             opc_funcionario = int(input("Digite sua escolha: "))
             if opc_funcionario == 1:

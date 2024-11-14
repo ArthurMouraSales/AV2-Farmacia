@@ -8,7 +8,8 @@ while(True):
     1 - Login ADM
     2 - Login Funcionario
     3 - Finalizar
-    --------------------------------------""")
+    --------------------------------------
+    """)
 
     opcao = int(input("Digite uma das opções sinalizadas acima: "))
     if opcao == 1:

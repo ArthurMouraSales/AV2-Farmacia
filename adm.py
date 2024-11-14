@@ -15,7 +15,8 @@ def acesso_adm():
             5 - Listar clientes
             6 - Listar remedios
             7 - Sair
-            --------------------------------------""")
+            --------------------------------------
+            """)
 
             opc_adm = int(input("Digite sua escolha: "))
             if opc_adm == 1:
