@@ -234,14 +234,31 @@ def selecao_info_remedios():
         conn.close()
 
 def selecao_info_vendas():
-        conn = conexao()
+    conn = conexao()
     try:
-        
         cursor = conn.cursor()
         query = "select v.id_venda, v.data_venda from vendas v;"
         cursor.execute(query)
         selecionar_info_vendas = cursor.fetchall()
         print(selecionar_info_vendas)
+        
+        conn.commit()
+    except Exception as e:
+        print(f"Erro: {e}")  
+    finally:
+        cursor.close()
+        conn.close()
+
+
+def selecao_nao_vendidos():
+    conn = conexao()
+    try:
+        
+        cursor = conn.cursor()
+        query = "select r.nome_remedio from remedios r left join vendas v on r.id_remedio = v.id_remedio where v.id_venda is null;"
+        cursor.execute(query)
+        selecionar_nao_vendidos = cursor.fetchall()
+        print(selecionar_nao_vendidos)
         
         conn.commit()
     except Exception as e:
