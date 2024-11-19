@@ -1,5 +1,5 @@
 import os
-from banco import insercao_venda, selecao_info_cliente, selecao_info_funcionario, selecao_info_remedios, selecao_cliente, selecao_geral_vendas, selecao_venda_funcionario, selecao_nao_vendidos
+from banco import insercao_venda, selecao_info_cliente, selecao_info_funcionario, selecao_info_remedios, selecao_cliente, selecao_geral_vendas, selecao_venda_funcionario, selecao_nao_vendidos, selecao_compras_cliente, selecao_clientes_remedio, selecao_remedio_pdia, selecao_clientes_mais_um_remedio
 from verificacao import login_funcionario, login_adm
 
 def acesso_funcionario():
@@ -13,6 +13,10 @@ def acesso_funcionario():
             3 - Selecionar todas as vendas
             4 - Vendas diaria do funcionario
             5 - Consultar remedios que não foram vendidos
+            6 - Consultar compras realizadas por determinado cliente
+            7 - Consultar clientes que compraram determinado remedio
+            8 - Consultar remedios vendidos mais de uma vez no mesmo dia
+            9 - Consultar remedios que foram comprados mais de uma unidade por cliente
             10 - Sair
             --------------------------------------
             """)
@@ -35,6 +39,22 @@ def acesso_funcionario():
             elif opc_funcionario == 5:
                 os.system('cls')
                 selecao_nao_vendidos()
+            elif opc_funcionario == 6:
+                os.system('cls')
+                selecao_info_cliente
+                id_cliente = input("Digite o id do cliente que você deseja verificar: ")
+                selecao_compras_cliente(id_cliente)
+            elif opc_funcionario == 7:
+                os.system('cls')
+                selecao_info_remedios
+                nome_remedio = input("Digite o id do cliente que você deseja verificar: ")
+                selecao_clientes_remedio(nome_remedio)
+            elif opc_funcionario == 8:
+                os.system('cls')
+                selecao_remedio_pdia()
+            elif opc_funcionario == 9:
+                os.system('cls')
+                selecao_clientes_mais_um_remedio()
             elif opc_funcionario == 10:
                 os.system('cls')
                 return
