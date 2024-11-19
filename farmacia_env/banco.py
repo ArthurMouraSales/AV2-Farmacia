@@ -266,3 +266,71 @@ def selecao_nao_vendidos():
     finally:
         cursor.close()
         conn.close()
+
+def selecao_compras_cliente(id_cliente):
+    conn = conexao()
+    try:
+        
+        cursor = conn.cursor()
+        query = "select v.id_venda, f.nome_funcionario,  r.nome_remedio, v.valor_final, v.forma_pagamento, v.data_venda from vendas v inner join funcionarios f on v.id_funcionario = f.id_funcionario inner join remedios r on v.id_remedio = r.id_remedio where v.id_cliente = %s;"
+        cursor.execute(query,(id_cliente))
+        selecionar_compras_cliente = cursor.fetchall()
+        print(selecionar_compras_cliente)
+        
+        conn.commit()
+    except Exception as e:
+        print(f"Erro: {e}")  
+    finally:
+        cursor.close()
+        conn.close()
+
+def selecao_clientes_remedio(nome_remedio):
+    conn = conexao()
+    try:
+        
+        cursor = conn.cursor()
+        query = "select c.nome_cliente, v.id_venda, v.valor_final, v.forma_pagamento, v.data_venda from vendas v inner join clientes c on v.id_cliente = c.id_cliente inner join remedios r on v.id_remedio = r.id_remedio where r.nome_remedio = %s;"
+        cursor.execute(query,(nome_remedio))
+        selecionar_clientes_remedio = cursor.fetchall()
+        print(selecionar_clientes_remedio)
+        
+        conn.commit()
+    except Exception as e:
+        print(f"Erro: {e}")  
+    finally:
+        cursor.close()
+        conn.close()
+
+def selecao_remedio_pdia():
+    conn = conexao()
+    try:
+        
+        cursor = conn.cursor()
+        query = "select r.nome_remedio, v.data_venda, COUNT(v.id_venda) as quantidade vendida from vendas v inner join remedios r on v.id_remedio = r.id_remedio group by r.nome_remedio, v.data_venda having COUNT(v.id_venda) > 1;"
+        cursor.execute(query)
+        selecionar_remedios_pdia = cursor.fetchall()
+        print(selecionar_remedios_pdia)
+        
+        conn.commit()
+    except Exception as e:
+        print(f"Erro: {e}")  
+    finally:
+        cursor.close()
+        conn.close()
+
+def selecao_clientes_mais_um_remedio():
+    conn = conexao()
+    try:
+        
+        cursor = conn.cursor()
+        query = "select c.nome_cliente, COUNT(DISTINCT v.id_remedio) as total remédios from vendas v inner join clientes c on v.id_cliente = c.id_cliente group by c.nome_cliente having COUNT(DISTINCT v.id_remedios) > 1;"
+        cursor.execute(query)
+        selecionar_clientes_mais_um_remedio = cursor.fetchall()
+        print(selecionar_clientes_mais_um_remedio)
+        
+        conn.commit()
+    except Exception as e:
+        print(f"Erro: {e}")  
+    finally:
+        cursor.close()
+        conn.close()
