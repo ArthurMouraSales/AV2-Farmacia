@@ -30,13 +30,13 @@ def insercao_cliente(cpf, nome_cliente, endereco_cliente, telefone_cliente):
         cursor.close()
         conn.close()
 
-def insercao_funcionario(cpf_funcionario, nome_funcionario, idade_funcionario, salario, turno, telefone_funcionario):
+def insercao_funcionario(cpf_funcionario, nome_funcionario, idade_funcionario, salario, turno, telefone_funcionario, adm, username, password):
     conn = conexao()
     try:
 
         cursor = conn.cursor()
-        query = "INSERT INTO funcionarios (cpf_funcionario, nome_funcionario, idade_funcionario, salario, turno, telefone_funcionario) VALUES (%s, %s, %s, %s, %s, %s, %s);"
-        cursor.execute(query, (cpf_funcionario, nome_funcionario, idade_funcionario, salario, turno, telefone_funcionario))
+        query = "INSERT INTO funcionarios (cpf_funcionario, nome_funcionario, idade_funcionario, salario, turno, telefone_funcionario, adm, username, password) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s);"
+        cursor.execute(query, (cpf_funcionario, nome_funcionario, idade_funcionario, salario, turno, telefone_funcionario, adm, username, password))
         conn.commit()
 
         print("Funcionario inserido com sucesso!")
@@ -323,7 +323,7 @@ def selecao_clientes_mais_um_remedio():
     try:
         
         cursor = conn.cursor()
-        query = "select c.nome_cliente, COUNT(DISTINCT v.id_remedio) as total remédios from vendas v inner join clientes c on v.id_cliente = c.id_cliente group by c.nome_cliente having COUNT(DISTINCT v.id_remedios) > 1;"
+        query = "select c.nome_cliente, COUNT(DISTINCT v.id_remedio) as total remedios from vendas v inner join clientes c on v.id_cliente = c.id_cliente group by c.nome_cliente having COUNT(DISTINCT v.id_remedios) > 1;"
         cursor.execute(query)
         selecionar_clientes_mais_um_remedio = cursor.fetchall()
         print(selecionar_clientes_mais_um_remedio)
@@ -331,6 +331,33 @@ def selecao_clientes_mais_um_remedio():
         conn.commit()
     except Exception as e:
         print(f"Erro: {e}")  
+    finally:
+        cursor.close()
+        conn.close()
+
+def login_adm(username, password):
+    conn = conexao()
+    try:
+        
+        cursor = conn.cursor()
+        query = "select f.username, f.password, f.adm from funcionarios f where username =" + f"'{username}'" + "and password =" + f"'{password}'" + "and adm = TRUE"
+        cursor.execute(query)
+        return cursor.fetchone()
+    except Exception as e:
+        print(f"Erro na verificação de acesso: {e}")  
+    finally:
+        cursor.close()
+        conn.close()
+
+def login_func(username, password):
+    conn = conexao()
+    try:
+        cursor = conn.cursor()
+        query = "select f.username, f.password, f.adm from funcionarios f where  username =" + f"'{username}'" + "and password =" + f"'{password}'" + "and adm = FALSE"
+        cursor.execute(query)
+        return cursor.fetchone()
+    except Exception as e:
+        print(f"Erro na verificação de acesso: {e}")  
     finally:
         cursor.close()
         conn.close()

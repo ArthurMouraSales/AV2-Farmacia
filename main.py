@@ -1,5 +1,5 @@
-from adm import acesso_adm
 from funcionario import acesso_funcionario
+from verificacao import acessar_adm, acessar_func
 
 while(True):
     print("Seja bem vindo ao sistema interno de nossa empresa!")
@@ -13,11 +13,16 @@ while(True):
 
     opcao = int(input("Digite uma das opções sinalizadas acima: "))
     if opcao == 1:
-        print("Você esta na aba de administrador")
-        acesso_adm()
+        acessar_adm()
     elif opcao == 2:
-        print("Você esta na aba de funcionario")
-        acesso_funcionario()
+        print("Digite 1 para entrar como adm e 2 para entrar como funcionario")
+        opc_acesso = int(input("Digite o tipo de acesso: "))
+        if opc_acesso == 1:
+            acessar_adm()
+        elif opc_acesso == 2:
+            acessar_func()
+        else:
+            print("Erro na escolha da opção")
     elif opcao == 3:
         break
     else:
