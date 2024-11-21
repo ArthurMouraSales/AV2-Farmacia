@@ -45,8 +45,8 @@ def acesso_funcionario():
             selecao_compras_cliente(id_cliente)
         elif opc_funcionario == 7:
             os.system('cls')
-            selecao_info_remedios
-            nome_remedio = input("Digite o id do cliente que você deseja verificar: ")
+            selecao_info_remedios()
+            nome_remedio = input("Digite o nome do remedio que você deseja verificar: ")
             selecao_clientes_remedio(nome_remedio)
         elif opc_funcionario == 8:
             os.system('cls')
