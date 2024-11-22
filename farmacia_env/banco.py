@@ -31,13 +31,13 @@ def insercao_cliente(cpf, nome_cliente, endereco_cliente, telefone_cliente):
         cursor.close()
         conn.close()
 
-def insercao_funcionario(cpf_funcionario, nome_funcionario, idade_funcionario, salario, turno, telefone_funcionario, adm, username, password):
+def insercao_funcionario(cpf_funcionario, nome_funcionario, salario, turno, telefone_funcionario, adm, username, password):
     conn = conexao()
     try:
 
         cursor = conn.cursor()
-        query = "INSERT INTO funcionarios (cpf_funcionario, nome_funcionario, idade_funcionario, salario, turno, telefone_funcionario, adm, username, password) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s);"
-        cursor.execute(query, (cpf_funcionario, nome_funcionario, idade_funcionario, salario, turno, telefone_funcionario, adm, username, password))
+        query = "INSERT INTO funcionarios (cpf_funcionario, nome_funcionario, salario, turno, telefone_funcionario, adm, username, password) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s);"
+        cursor.execute(query, (cpf_funcionario, nome_funcionario, salario, turno, telefone_funcionario, adm, username, password))
         conn.commit()
 
         print("Funcionario inserido com sucesso!")

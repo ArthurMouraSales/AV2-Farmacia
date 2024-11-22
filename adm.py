@@ -41,10 +41,8 @@ def acesso_adm():
 def add_funcionario():
     os.system('cls')
     print("Digite as informações pedidas a seguir")
-    rg_funcionario = input("Digite o RG: ")
     cpf_funcionario = input("Digite o CPF: ")
     nome_funcionario = input("Digite o nome: ")
-    idade_funcionario = int(input("Digite a idade: "))
     salario = float(input("Digite o salario: "))
     turno = input("Digite o turno: ")
     telefone_funcionario = input("Digite o telefone para contato: ")
@@ -52,7 +50,7 @@ def add_funcionario():
     password = input("Digite a senha desse funcionario: ")
     print("Responda com TRUE para sim e FALSE para não")
     adm = input("Digite se o usuario tem acesso de adm (Siga as instruções passadas acima): ")
-    insercao_funcionario(rg_funcionario, cpf_funcionario, nome_funcionario, idade_funcionario, salario, turno, telefone_funcionario, username, password, adm)
+    insercao_funcionario(cpf_funcionario, nome_funcionario, salario, turno, telefone_funcionario, username, password, adm)
 
 def add_cliente():
     os.system('cls')
