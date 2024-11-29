@@ -250,6 +250,21 @@ def selecao_info_vendas():
         cursor.close()
         conn.close()
 
+def selecao_info_espec_func():
+    conn = conexao()
+    try:
+        cursor = conn.cursor()
+        query = "select f.id_funcionario, f.nome_funcionario, f.salario from funcionarios f;"
+        cursor.execute(query)
+        selecionar_info_espec_func = cursor.fetchall()
+        print(selecionar_info_espec_func)
+        
+        conn.commit()
+    except Exception as e:
+        print(f"Erro: {e}")  
+    finally:
+        cursor.close()
+        conn.close()
 
 def selecao_nao_vendidos():
     conn = conexao()
@@ -379,6 +394,19 @@ def novo_preco(preco, nome_remedio):
         cursor = conn.cursor()
         query = "update remedios set preco = %s where nome_remedio ilike %s"
         cursor.execute(query, (preco, nome_remedio))
+        conn.commit()
+    except Exception as e:
+        print(f"Erro na verificação de acesso: {e}")  
+    finally:
+        cursor.close()
+        conn.close()
+
+def mudanca_salario(salario, id_funcionario):
+    conn = conexao()
+    try:
+        cursor = conn.cursor()
+        query = "update funcionarios set salario = %s where id_funcionario = %s"
+        cursor.execute(query, (salario, id_funcionario))
         conn.commit()
     except Exception as e:
         print(f"Erro na verificação de acesso: {e}")  

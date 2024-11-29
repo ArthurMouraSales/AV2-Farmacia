@@ -1,5 +1,5 @@
 import os
-from banco import insercao_funcionario, insercao_cliente, insercao_remedio, selecao_funcionario, selecao_cliente, selecao_remedio, novo_preco, selecao_info_remedios
+from banco import insercao_funcionario, insercao_cliente, insercao_remedio, selecao_funcionario, selecao_cliente, selecao_remedio, novo_preco, selecao_info_remedios, mudanca_salario, selecao_info_espec_func
 
 def acesso_adm():
     print("Você esta na aba de administrador")
@@ -13,8 +13,11 @@ def acesso_adm():
         4 - Listar funcionarios
         5 - Listar clientes
         6 - Listar remedios
-        7 - Atualizar preço      
-        8 - Sair
+        7 - Atualizar preço
+        8 - Atualizar salario      
+        9 - Remover remedio
+        10 - Remover funcionario
+        11 - Sair
         --------------------------------------
         """)
 
@@ -34,10 +37,20 @@ def acesso_adm():
         elif opc_adm == 7:
             os.system('cls')
             selecao_info_remedios()
-            nome_remedio = input("Digite o nome do remedio que deseja alterar")
+            nome_remedio = input("Digite o nome do remedio que deseja alterar: ")
             preco = float(input("Digite o novo preço do remedio: "))
             novo_preco(preco, nome_remedio)
         elif opc_adm == 8:
+            os.system('cls')
+            selecao_info_espec_func()
+            id_funcionario = int(input("Digite o id do funcionario que deseja alterar o salario: "))
+            salario = float(input("Digite o novo salario do funcionario: "))
+            mudanca_salario(salario, id_funcionario)
+        elif opc_adm == 9:
+            os.system('cls')
+        elif opc_adm == 10:
+            os.system('cls')
+        elif opc_adm == 11:
             print("Sair")
             return 
         else:
