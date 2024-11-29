@@ -4,6 +4,7 @@ from banco import insercao_venda, selecao_info_cliente, selecao_info_funcionario
 def acesso_funcionario():
     print("Você esta na aba de funcionario")
     while(True):
+        os.system('cls')
         print("Escolha qual ação deseja realizar")
         print("""
         --------------------------------------
@@ -66,13 +67,14 @@ def venda():
     valor_parcial = 0
     print("Digite as informações pedidas a seguir.")
     selecao_info_funcionario()
-    id_funcionario = int(input("Informe o ID do funcionario:  "))
+    id_funcionario = input("Informe o ID do funcionario:  ")
     selecao_info_cliente()
-    id_cliente = int(input("Informe o ID do cliente:  "))
+    id_cliente = input("Informe o ID do cliente:  ")
     selecao_info_remedios()
-    id_remedio = int(input("Informe o ID do remédio:  "))
+    id_remedio = input("Informe o ID do remédio:  ")
     valor_remedio = float(input("Digite o valor do remedio: "))
     valor_parcial += valor_remedio
+    print("DIN - Dinheiro | DEB - Debito | CRED - Credito | PIX")
     forma_pagamento = input("Informe a forma de pagamento:  ")
     data_venda = input("Informe a data da venda:  ")
     valor_final = valor_parcial
