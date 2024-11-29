@@ -1,7 +1,8 @@
 from banco import login_adm, login_func
+import pwinput
 from adm import acesso_adm
 from funcionario import acesso_funcionario
-import pwinput
+
 
 def acessar_adm():
     is_authenticated_adm = False

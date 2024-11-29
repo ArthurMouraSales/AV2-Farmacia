@@ -19,7 +19,6 @@ def acesso_funcionario():
         10 - Sair
         --------------------------------------
         """)
-            
         opc_funcionario = int(input("Digite sua escolha: "))
         if opc_funcionario == 1:
             os.system('cls')

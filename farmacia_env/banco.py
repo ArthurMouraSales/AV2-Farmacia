@@ -34,7 +34,7 @@ def insercao_cliente(cpf, nome_cliente, endereco_cliente, telefone_cliente):
 def insercao_funcionario(cpf_funcionario, nome_funcionario, salario, turno, telefone_funcionario, adm, username, password):
     conn = conexao()
     try:
-
+        
         cursor = conn.cursor()
         query = "INSERT INTO funcionarios (cpf_funcionario, nome_funcionario, salario, turno, telefone_funcionario, adm, username, password) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s);"
         cursor.execute(query, (cpf_funcionario, nome_funcionario, salario, turno, telefone_funcionario, adm, username, password))
@@ -372,3 +372,16 @@ def criptografar(password):
 def check_password(password, hashed):
     password_bytes = password.encode('utf-8')
     return bcrypt.checkpw(password_bytes, hashed)
+
+def novo_preco(preco, nome_remedio):
+    conn = conexao()
+    try:
+        cursor = conn.cursor()
+        query = "update remedios set preco = %s where nome_remedio ilike %s"
+        cursor.execute(query, (preco, nome_remedio))
+        conn.commit()
+    except Exception as e:
+        print(f"Erro na verificação de acesso: {e}")  
+    finally:
+        cursor.close()
+        conn.close()
