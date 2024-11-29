@@ -15,8 +15,8 @@ def acesso_adm():
         6 - Listar remedios
         7 - Atualizar preço
         8 - Atualizar salario      
-        9 - Remover remedio
-        10 - Remover funcionario
+        9 - -------
+        10 - ------
         11 - Sair
         --------------------------------------
         """)
@@ -43,13 +43,9 @@ def acesso_adm():
         elif opc_adm == 8:
             os.system('cls')
             selecao_info_espec_func()
-            id_funcionario = int(input("Digite o id do funcionario que deseja alterar o salario: "))
+            id_funcionario = input("Digite o id do funcionario que deseja alterar o salario: ")
             salario = float(input("Digite o novo salario do funcionario: "))
             mudanca_salario(salario, id_funcionario)
-        elif opc_adm == 9:
-            os.system('cls')
-        elif opc_adm == 10:
-            os.system('cls')
         elif opc_adm == 11:
             print("Sair")
             return 
