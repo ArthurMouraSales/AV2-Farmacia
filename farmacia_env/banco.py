@@ -68,7 +68,7 @@ def insercao_venda(id_funcionario, id_cliente, id_remedio, valor_final, forma_pa
     try: 
 
         cursor = conn.cursor()     
-        query = "INSERT INTO vendas(id_funcionario, id_cliente, id_remedio, valor_final, forma_pagamento, data_venda)VALUES(%s, %s, %s, %s, %s, %s);"
+        query = "INSERT INTO vendas(id_funcionario, id_cliente, id_remedio, valor_final, forma_pagamento, data_venda) VALUES(%s, %s, %s, %s, %s, %s);"
         cursor.execute(query,(id_funcionario, id_cliente, id_remedio, valor_final, forma_pagamento, data_venda))       
         conn.commit()
         

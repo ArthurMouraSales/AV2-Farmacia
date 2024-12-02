@@ -15,9 +15,7 @@ def acesso_adm():
         6 - Listar remedios
         7 - Atualizar preço
         8 - Atualizar salario      
-        9 - -------
-        10 - ------
-        11 - Sair
+        9 - Sair
         --------------------------------------
         """)
 
@@ -46,7 +44,7 @@ def acesso_adm():
             id_funcionario = input("Digite o id do funcionario que deseja alterar o salario: ")
             salario = float(input("Digite o novo salario do funcionario: "))
             mudanca_salario(salario, id_funcionario)
-        elif opc_adm == 11:
+        elif opc_adm == 9:
             print("Sair")
             return 
         else:

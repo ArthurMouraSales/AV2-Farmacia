@@ -10,8 +10,8 @@ def acesso_funcionario():
         --------------------------------------
         1 - Realizar venda
         2 - Consultar clientes
-        3 - Selecionar todas as vendas
-        4 - Vendas diaria do funcionario
+        3 - Consultar todas as vendas
+        4 - Consultar vendas diarias de cada funcionário
         5 - Consultar remedios que não foram vendidos
         6 - Consultar compras realizadas por determinado cliente
         7 - Consultar clientes que compraram determinado remedio
