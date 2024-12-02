@@ -2,10 +2,8 @@ import os
 from banco import insercao_venda, selecao_info_cliente, selecao_info_funcionario, selecao_info_remedios, selecao_cliente, selecao_geral_vendas, selecao_venda_funcionario, selecao_nao_vendidos, selecao_compras_cliente, selecao_clientes_remedio, selecao_remedio_pdia, selecao_clientes_mais_um_remedio
 
 def acesso_funcionario():
-    os.system('cls')
     print("Você esta na aba de funcionario")
     while(True):
-        os.system('cls')
         print("Escolha qual ação deseja realizar")
         print("""
         --------------------------------------
@@ -53,7 +51,6 @@ def acesso_funcionario():
             os.system('cls')
             selecao_remedio_pdia()
         elif opc_funcionario == 9:
-            os.system('cls')
             selecao_clientes_mais_um_remedio()
         elif opc_funcionario == 10:
             os.system('cls')
