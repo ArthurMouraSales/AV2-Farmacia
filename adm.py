@@ -2,6 +2,7 @@ import os
 from banco import insercao_funcionario, insercao_cliente, insercao_remedio, selecao_funcionario, selecao_cliente, selecao_remedio, novo_preco, selecao_info_remedios, mudanca_salario, selecao_info_espec_func
 
 def acesso_adm():
+    os.system('cls')
     print("Você esta na aba de administrador")
     while(True):
         print("Escolha qual ação deseja realizar")
@@ -45,7 +46,6 @@ def acesso_adm():
             salario = float(input("Digite o novo salario do funcionario: "))
             mudanca_salario(salario, id_funcionario)
         elif opc_adm == 9:
-            print("Sair")
             return 
         else:
             print("Algum erro ocorreu na digitação da opção")
